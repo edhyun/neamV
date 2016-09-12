@@ -4,7 +4,8 @@ import AddItemWindow from '../components/AddItemWindow'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        addItemWindow: state.navUI.addItemWindow
+        addItemWindow: state.navUI.addItemWindow,
+        loading: state.crawler.loading
     }
 }
 

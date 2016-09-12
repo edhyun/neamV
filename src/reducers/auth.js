@@ -16,12 +16,7 @@ const auth = (state = { authenticated: false, id: null }, action) => {
             }
         case "SIGN_IN_SUCCESS":
             console.log('sigin in success in reducer', action.payload)
-            return Object.assign({}, {
-                authenticated: !!action.payload,
-                id: action.payload ? action.payload.uid : null,
-                userName: action.payload.displayName,
-                userImage: action.payload.photoURL
-            })
+            return Object.assign({}, action.payload)
         case "SIGN_OUT_SUCCESS":
             return Object.assign({},{
                 authenticated: false,

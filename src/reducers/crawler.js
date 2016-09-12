@@ -7,7 +7,8 @@ const crawler = (state = { loading: false, temp: {} }, action) => {
             })
         case "CRAWLED_ITEM_TEMP_STORE":
             return Object.assign({}, state, {
-                temp: action.payload
+                temp: action.payload,
+                loading: false
             })
         case "SAVE_CRAWLED_ITEM_SUCCESS":
             return Object.assign({}, state, {

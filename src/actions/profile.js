@@ -1,6 +1,7 @@
 import { firebaseDb } from '../core/firebase'
 
 export function fetchUserProfile(dispatch, auth){
+    console.log('fetchuserprifle auth', auth)
     if(auth.authenticated){
         let userId = auth.id
 
@@ -13,8 +14,8 @@ export function fetchUserProfile(dispatch, auth){
                     id
                 }
             }
-
             return new Promise((resolve, reject) => {
+                console.log('user snapshot val', snapshot.val())
                 dispatch(dispatchUser(snapshot.val(), userId))
                 resolve()
             })

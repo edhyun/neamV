@@ -14,7 +14,7 @@ function authenticate(provider) {
   return dispatch => {
     firebaseAuth.signInWithPopup(provider)
       .then(result => dispatch(signInSuccess(result)))
-      .then(result => dispatch(fetchUserProfile(result.payload))) // load init profile from firebase
+      .then(result => fetchUserProfile(dispatch, result.payload)) // load init profile from firebase      
       .catch(error => dispatch(signInError(error)));
   };
 
@@ -28,7 +28,12 @@ function authenticate(provider) {
   function signInSuccess(result) {
     return {
       type: "SIGN_IN_SUCCESS",
-      payload: result.user
+      payload: {
+          authenticated: !!result.user,
+          id: result.user ? result.user.uid : null,
+          userName: result.user.displayName,
+          userImage: result.user.photoURL
+      }
     };
   }
 }

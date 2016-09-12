@@ -2,7 +2,7 @@ import React from 'react'
 import CrawlerContainer from '../containers/CrawlerContainer'
 import SaveItemButtonContainer from '../containers/SaveItemButtonContainer'
 
-const AddItemWindow = ({ addItemWindow, saveItem, addItemWindowClose }) => {
+const AddItemWindow = ({ loading, addItemWindow, saveItem, addItemWindowClose }) => {
 
     return (
         <div>
@@ -21,9 +21,11 @@ const AddItemWindow = ({ addItemWindow, saveItem, addItemWindowClose }) => {
                             Write your comment
                             <SaveItemButtonContainer>Save Item</SaveItemButtonContainer>
                         </div>
+                        {loading ? <div id="loader_wrapper"><div id="loader"></div></div> : null}
                     </div>
                 </div>
-            : null}
+            : null
+            }
         </div>
     )
 }

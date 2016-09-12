@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { crawlerActions } from '../actions'
+import { crawlerActions, navUIActions } from '../actions'
 import UserInputForm from '../components/UserInputForm'
 
 
@@ -16,10 +16,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onSave: (crawledItem, author, userInput) => {            
+        onSave: (crawledItem, author, userInput) => {
             dispatch(crawlerActions.saveItem(crawledItem, author, userInput))
             //dispatch(itemActions.createItem(value))
             //dispatch(crawlerActions.crawlerStart())
+
+            dispatch(navUIActions.addItemWindowClose())            
         }
     }
 }

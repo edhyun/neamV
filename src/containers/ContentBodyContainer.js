@@ -6,8 +6,7 @@ const mapStateToProps = (state) => {
     return {
         items: state.items,
         userId: state.auth.authenticated ? state.auth.id : null,
-        likedArticles: state.profile.length > 0 ? state.profile[0].likedArticles : [],
-        loading: state.crawler.loading
+        likedArticles: state.profile.length > 0 ? state.profile[0].likedArticles : [],        
     }
 }
 

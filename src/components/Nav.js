@@ -3,7 +3,7 @@ import AddItemWindowOpenButtonContainer from '../containers/AddItemWindowOpenBut
 import AddItemWindowContainer from '../containers/AddItemWindowContainer'
 import SignInMenuContainer from '../containers/SignInMenuContainer'
 
-const Nav = ({ signInWithGoogle, signInWithFacebook, signOut, authenticated, userName, userImage }) => (
+const Nav = ({authenticated}) => (
     <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container">
             <div className="navbar-header">
@@ -16,13 +16,18 @@ const Nav = ({ signInWithGoogle, signInWithFacebook, signOut, authenticated, use
                 <a className="navbar-brand" href="#"><strong>neam.io</strong></a>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <form className="navbar-form navbar-left">
-                    <AddItemWindowOpenButtonContainer>Add Item</AddItemWindowOpenButtonContainer>
-                    <AddItemWindowContainer/>
-                </form>
-                <div className="pull-right nav-right">
-                    <SignInMenuContainer />                    
+                <div className="pull-right nav-user-icon">
+                    <SignInMenuContainer />
                 </div>
+                <form className="navbar-form navbar-right">
+                    { authenticated ?
+                        <div>
+                            <AddItemWindowOpenButtonContainer>Add Item</AddItemWindowOpenButtonContainer>
+                            <AddItemWindowContainer/>
+                        </div>
+                        : null
+                    }
+                </form>
             </div>
         </div>
     </nav>

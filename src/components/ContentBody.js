@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-const ContentBody = ({items, loading, ...props}) => (
+const ContentBody = ({items, ...props}) => (
     <div className="col-md-12">
         <div className="row">
             {items.sort((a,b) => Date.parse(b.timestamp) - Date.parse(a.timestamp)).map(item =>
@@ -11,8 +11,7 @@ const ContentBody = ({items, loading, ...props}) => (
                     {...props}
                 />
             )}
-        </div>
-        {loading ? <div id="loader_wrapper"><div id="loader"></div></div> : null}
+        </div>        
     </div>
 )
 
