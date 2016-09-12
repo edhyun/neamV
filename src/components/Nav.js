@@ -1,8 +1,9 @@
 import React from 'react'
 import AddItemWindowOpenButtonContainer from '../containers/AddItemWindowOpenButtonContainer'
 import AddItemWindowContainer from '../containers/AddItemWindowContainer'
+import SignInMenuContainer from '../containers/SignInMenuContainer'
 
-const Nav = ({ signIn, signOut, authenticated, userName, userImage }) => (
+const Nav = ({ signInWithGoogle, signInWithFacebook, signOut, authenticated, userName, userImage }) => (
     <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container">
             <div className="navbar-header">
@@ -20,18 +21,7 @@ const Nav = ({ signIn, signOut, authenticated, userName, userImage }) => (
                     <AddItemWindowContainer/>
                 </form>
                 <div className="pull-right nav-right">
-                    {
-                        !authenticated ?
-                        <span onClick={() => { signIn() }}>SIGN IN</span> :
-                        (
-                            <div>
-                                <img src={userImage} alt="Profile" width={"40px"} />
-                                {" Hi, " + userName + "  |  "}
-                                <span onClick={() => { signOut() }}>SIGN OUT</span>
-                            </div>
-                        )
-
-                    }
+                    <SignInMenuContainer />                    
                 </div>
             </div>
         </div>

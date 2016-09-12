@@ -18,7 +18,8 @@ const items = (state = [], action) => {
                 alchemy_concepts: item.alchemy_result.concepts.results,
                 alchemy_keywords: item.alchemy_result.keywords.results,
                 usersWhoLiked: [],
-                userInput: item.userInput
+                userInput: item.userInput,
+                author: item.author
             })
         })
         case "UPDATE_ITEM_SUCCESS":

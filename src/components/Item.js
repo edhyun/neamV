@@ -3,8 +3,14 @@ import React from 'react'
 const Item = ({userId, likedArticles, likeArticle, unlikeArticle, deleteItem, ...item}) => (
     <div className="col-md-4">
         <div className="thumbnail item">
-            user name
-            <span className="pull-right">{timeSince(item.timestamp)}</span>
+            {item.author &&
+                <div className="authorWrapper">
+                    <img src={item.author.photoURL} alt="profile_img" className="profile_img pull-left"></img>
+                    <span className="profile_name">{ item.author.name }</span>
+                    <span className="pull-right">{timeSince(item.timestamp)}</span>
+                </div>
+            }
+            <div className="clearfix"></div>
             <hr />
             {item.image ? <img className="item-image pull-left" alt="thumbnail" src={item.image}></img> : null}
             <a href={item.url}>

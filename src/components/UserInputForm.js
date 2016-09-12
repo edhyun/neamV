@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserInputForm = ({ tempStoredItem, onSave, children }) => {
+const UserInputForm = ({ tempStoredItem, currentUser, onSave, children }) => {
     let input
 
     return (
@@ -8,7 +8,7 @@ const UserInputForm = ({ tempStoredItem, onSave, children }) => {
             <input type="text" ref={node => { input = node }} />
             <button onClick={ e => {
                     e.preventDefault()
-                    onSave(tempStoredItem, input.value)
+                    onSave(tempStoredItem, currentUser, input.value)
                     input.value = ''
                 }}>
                 { children }

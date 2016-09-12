@@ -11,9 +11,12 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        signIn: () => {
+        signInWithGoogle: () => {
             dispatch(authActions.signInWithGoogle())
         },
+        signInWithFacebook: () => {
+            dispatch(authActions.signInWithFacebook())
+        },        
         signOut: () => {
             dispatch(authActions.signOut())
         }

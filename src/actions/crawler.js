@@ -8,7 +8,8 @@ export function crawlerStart(text){
     }
 }
 
-export function saveItem(result, userInput){
+export function saveItem(result, author, userInput){
+    console.log('author', author)
     return dispatch => {
         firebaseDb.ref('items').push({
             title: result.jsonRes.title || "",
@@ -19,7 +20,12 @@ export function saveItem(result, userInput){
             contentType: result.contentType,
             jsonRes: result.jsonRes,
             alchemy_result: result.alchemy_result,
-            userInput: userInput
+            userInput,
+            author: {
+                id: author.id,
+                name: author.name,
+                photoURL: author.photoURL
+            }
         })
         .then(item => dispatch(saveCrawledItemSuccess(item)))
         .catch(error => dispatch(saveCrawledItemError(error)))
