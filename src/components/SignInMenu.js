@@ -33,8 +33,8 @@ class SignInMenu extends Component {
                 (
                     <div>
                         <img src={userImage} alt="Profile" width={"40px"} />
-                        {" Hi, " + userName + "  |  "}
-                        <span onClick={() => { signOut() }}>SIGN OUT</span>
+                        {" Hi, " + userName + "   |   "}
+                        <a href="#" onClick={() => { signOut() }}>SIGN OUT</a>
                     </div>
                 )
             }

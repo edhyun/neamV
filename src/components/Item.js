@@ -16,7 +16,7 @@ const Item = ({userId, likedArticles, likeArticle, unlikeArticle, deleteItem, ..
                 <div className="article">
                     {item.image ? <img className="item-image pull-left" alt="thumbnail" src={item.image}></img> : null}
                     <a href={item.url}>
-                        <h4>{ item.title || item.site_title }</h4>
+                        <h4 className="item-title"><strong>{ item.title || item.site_title }</strong></h4>
                     </a>
                     <p className="description">{item.description}</p>
                     <div className="clearfix"></div>

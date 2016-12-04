@@ -32,6 +32,10 @@
 .item .item-bottom{
     height: 11%;
 }
+
+.item .item-title{
+    color:#333;
+}
 .item .authorWrapper{
     line-height: 35px;
 }
@@ -113,7 +117,7 @@
 
 #addItemWindow{
     position: absolute;
-    width: 70%;
+    width: 30%;
     height: 50%;
     top: 0;
     bottom: 0;
@@ -127,8 +131,7 @@
 }
 
 #addItemWindow input, textarea{
-    width: 80%;
-    height: 200px;
+    width: 100%;
 }
 
 .signIn{

@@ -12,12 +12,10 @@ const AddItemWindow = ({ loading, addItemWindow, saveItem, addItemWindowClose })
                         addItemWindowClose()
                     }
                 }}>
-                    <div id="addItemWindow" className="row">
-                        <div className="col-sm-4">
+                    <div id="addItemWindow">
+                        <div className="form">
                             Paste URL here
                             <CrawlerContainer />
-                        </div>
-                        <div className="col-sm-8">
                             Write your comment
                             <SaveItemButtonContainer>Save Item</SaveItemButtonContainer>
                         </div>
